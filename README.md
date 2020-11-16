@@ -40,7 +40,7 @@
       1: Success
         User logged in and session started
 ## Examples
-### Simple Auth Interface (auth/example.php)
+### Simple Auth Interface (examples/auth-interface.php)
 ![Auth Interface Screenshot](https://i.imgur.com/AqhRch6.png)
 
 ### Async login in JS
