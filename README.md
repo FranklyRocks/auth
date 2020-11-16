@@ -12,10 +12,18 @@
     Go to mydomain.com/auth/install.php in your browser and press install
     For security reasons remove install.php and users.sql before you install
 ## How to use
-    Register account:
-      mydomain.com/auth/register.php?user=jhon&pass=123
-    Login account: 
-      mydomain.com/auth/login.php?user=jhon&pass=123
+### Register account
+```javascript
+  fetch("./auth/register.php?user=jhon&pass=123);
+```
+### Login account
+```javascript
+  fetch("./auth/login.php?user=jhon&pass=123);
+```
+### Get username of user logged in
+```php
+  echo $_SESSION["username"];
+```
 ## Docs
 ### Register API (register.php)
     Params: user, pass
