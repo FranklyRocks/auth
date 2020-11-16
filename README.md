@@ -45,7 +45,7 @@ function login(user, pass) {
 function verifyLogin(result) {
   switch(result) {
     case 1:
-      console.log("Logged in succesfully");
+      console.log("Logged in successfully");
       break;
     case 0:
       console.log("Error: username or password incorrect");
