@@ -19,14 +19,14 @@
 ## Docs
 ### Register API (register.php)
     Params: user, pass
-    Returns:
+    Return:
       0: Error
         User must be diferent from null or already exists
       1: Success
         User registered and session started
 ### Login API (login.php)
     Params: user, pass
-    Returns:
+    Return:
       0: Error
         Username or password incorrect
       1: Success
