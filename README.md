@@ -21,7 +21,7 @@
     Params: user, pass
     Return:
       0: Error
-        User must be diferent from null or already exists
+        Username must be diferent from null or already exists
       1: Success
         User registered and session started
 ### Login API (login.php)
