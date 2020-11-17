@@ -14,11 +14,13 @@
 ## How to use
 ### Register account
 ```javascript
-  fetch("./auth/register.php?user=jhon&pass=123);
+  let formData = new FormData(document.querySelector("#registerForm"));
+  fetch("./auth/register.php", {method: "POST", body: formData });
 ```
 ### Login account
 ```javascript
-  fetch("./auth/login.php?user=jhon&pass=123);
+  let formData = new FormData(document.querySelector("#loginForm"));
+  fetch("./auth/login.php", {method: "POST", body: formData });
 ```
 ### Get username of user logged in
 ```php
@@ -45,10 +47,14 @@
 
 ### Async login in JS
 ```javascript
-login("jhon", "123");
+let formData = new FormData();
+formData.append("user", "jhon");
+formData.append("pass", "123");
 
-function login(user, pass) {
-  fetch("./auth/login.php?user=" + user + "&pass=" + pass)
+login(formData);
+
+function login(formData) {
+  fetch("./auth/login.php", {method: "POST", body: formData })
     .then(response => response.text())
     .then(result => verifyLogin(result));
 }
