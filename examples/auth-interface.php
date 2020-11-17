@@ -40,13 +40,17 @@
 	<script>
 		function auth(url, element) {
 			var form = element.parentNode.querySelector('form');
-			fetch("./auth/" + url + ".php?user=" + form.elements["user"].value + "&pass=" + form.elements["pass"].value)
+			var formData = new FormData(form);
+			
+			fetch("../auth/" + url + ".php", {
+				method: "POST",
+				body: formData
+			})
 			.then(response => response.text())
 			.then(data => verifyAuth(data, form));
 		}
 
 		function verifyAuth(data, form) {
-			console.log(data);
 			if(data == 0) {
 				if(form.id == "registerForm")
 					form.parentNode.querySelector(".alert").innerHTML = "Username already exists";		
